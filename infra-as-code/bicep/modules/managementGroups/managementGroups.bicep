@@ -37,6 +37,19 @@ param parPlatformMgChildren object = {}
 @sys.description('Set Parameter to true to Opt-out of deployment telemetry.')
 param parTelemetryOptOut bool = false
 
+@sys.description('Deploys the Sandbox Management Group if set to true.')
+param parSandboxMgEnable bool = true
+
+@sys.description('Deploys the Decommissioned Management Group if set to true.')
+param parDecommissionedMgEnable bool = false
+
+@sys.description('Deploys the Platform Management Group if set to true.')
+param parPlatformMgEnable bool = false
+
+@sys.description('Deploys the Landing Zones Management Group if set to true.')
+param parLandingZoneMgEnable bool = false
+
+
 // Platform and Child Management Groups
 var varPlatformMg = {
   name: '${parTopLevelManagementGroupPrefix}-platform${parTopLevelManagementGroupSuffix}'
@@ -115,7 +128,7 @@ resource resTopLevelMg 'Microsoft.Management/managementGroups@2023-04-01' = {
 }
 
 // Level 2
-resource resPlatformMg 'Microsoft.Management/managementGroups@2023-04-01' = {
+resource resPlatformMg 'Microsoft.Management/managementGroups@2023-04-01' = if (parPlatformMgEnable) {
   name: varPlatformMg.name
   properties: {
     displayName: varPlatformMg.displayName
@@ -127,7 +140,7 @@ resource resPlatformMg 'Microsoft.Management/managementGroups@2023-04-01' = {
   }
 }
 
-resource resLandingZonesMg 'Microsoft.Management/managementGroups@2023-04-01' = {
+resource resLandingZonesMg 'Microsoft.Management/managementGroups@2023-04-01' = if (parLandingZoneMgEnable) {
   name: varLandingZoneMg.name
   properties: {
     displayName: varLandingZoneMg.displayName
@@ -139,7 +152,7 @@ resource resLandingZonesMg 'Microsoft.Management/managementGroups@2023-04-01' = 
   }
 }
 
-resource resSandboxMg 'Microsoft.Management/managementGroups@2023-04-01' = {
+resource resSandboxMg 'Microsoft.Management/managementGroups@2023-04-01' = if (parSandboxMgEnable) {
   name: varSandboxMg.name
   properties: {
     displayName: varSandboxMg.displayName
@@ -151,7 +164,8 @@ resource resSandboxMg 'Microsoft.Management/managementGroups@2023-04-01' = {
   }
 }
 
-resource resDecommissionedMg 'Microsoft.Management/managementGroups@2023-04-01' = {
+
+resource resDecommissionedMg 'Microsoft.Management/managementGroups@2023-04-01' = if (parDecommissionedMgEnable) {
   name: varDecommissionedMg.name
   properties: {
     displayName: varDecommissionedMg.displayName

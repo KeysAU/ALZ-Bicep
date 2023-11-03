@@ -3,22 +3,22 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "parTopLevelManagementGroupPrefix": {
-      "value": "alz"
+      "value": "global"
     },
     "parTopLevelManagementGroupSuffix": {
       "value": ""
     },
     "parTopLevelManagementGroupDisplayName": {
-      "value": "Azure Landing Zones"
+      "value": "Global"
     },
     "parTopLevelManagementGroupParentId": {
       "value": ""
     },
     "parLandingZoneMgAlzDefaultsEnable": {
-      "value": true
+      "value": false
     },
     "parPlatformMgAlzDefaultsEnable": {
-      "value": true
+      "value": false
     },
     "parLandingZoneMgConfidentialEnable": {
       "value": false
