@@ -55,7 +55,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "effectKvKeysExpire": {
         "type": "String",
@@ -68,7 +68,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "effectKvFirewallEnabled": {
         "type": "String",
@@ -81,7 +81,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "effectKvCertLifetime": {
         "type": "String",
@@ -97,7 +97,7 @@
           "disabled",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "maximumCertLifePercentageLife": {
         "type": "Integer",
@@ -126,7 +126,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "minimumKeysLifeDaysBeforeExpiry": {
         "type": "Integer",
@@ -147,7 +147,7 @@
           "Deny",
           "Disabled"
         ],
-        "defaultValue": "Audit"
+        "defaultValue": "Deny"
       },
       "minimumSecretsLifeDaysBeforeExpiry": {
         "type": "Integer",
